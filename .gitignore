@@ -1,0 +1,70 @@
+# Byte-compiled / compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Environment and virtual environment files
+.env
+venv/
+env/
+env-bak/
+.venv/
+.venv3/
+.venv2/
+.pipenv/
+pipfile.lock
+pipfile
+
+# Visual Studio Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# Editor/IDE specific files
+*~
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Compiled Python files
+*.pyc
+
+# macOS files
+.DS_Store
+
+# Python egg and build files
+eggs/
+build/
+
+# Distribution / packaging
+dist/
+*.egg-info/
+*.egg
+
+# Python installer logs
+pip-log.txt
+
+# Mac OS X Finder custom settings
+Icon
+
+# PyInstaller
+__pycache__/
+*.spec
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyUp.io's safety-db
+safety.db

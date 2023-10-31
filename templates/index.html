@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Consulta de Crédito</title>
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/styles/core.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/styles/icon-font.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/styles/style.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/styles/loading.css') }}">
+
+	<!-- Scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='src/scripts/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='src/scripts/jquery.mask.min.js') }}">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+	<div class="pd-20 card-box mb-30">
+		<div class="clearfix">
+			<div class="pull-left">
+				<h4 class="text-blue h4">Consulta de Crédito</h4>
+				<p class="mb-30">Todas suas consultas, apenas uma vez</p>
+			</div>
+		</div>
+
+
+
+		<form action="/" id="consultaForm" method="post">
+			<div class="row">
+
+				<div class="col-md-2 col-sm-12">
+					<div class="form-group">
+						<label>Digite o CPF do Cliente</label>
+						<input type="text" class="form-control" name="cpf_cliente" />
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-12">
+					<div class="form-group">
+						<label>Digite a placa do Veículo</label>
+						<input type="text" class="form-control" name="placa" />
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-12">
+					<div class="form-group">
+						<label>Valor do Veículo</label>
+						<input type="text" class="form-control" name="valor_veiculo" id="valor_veiculo" />
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-12">
+					<div class="form-group">
+						<label>Whatsapp p/ envio</label>
+						<input type="text" class="form-control" name="whatsapp" />
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6 col-sm-12">
+					<label class="weight-600">Quais bancos?</label>
+
+					<div class="custom-control custom-checkbox mb-5">
+						<input type="checkbox" class="custom-control-input" id="customCheck1-1" name="santander">
+						<label class="custom-control-label" for="customCheck1-1">Santander</label>
+					</div>
+
+					<div class="custom-control custom-checkbox mb-5">
+						<input type="checkbox" class="custom-control-input" id="customCheck2-1" name="itau">
+						<label class="custom-control-label" for="customCheck2-1">Itaú</label>
+					</div>
+
+				</div>
+			</div>
+
+
+			<button type="submit" class="btn btn-primary btn-lg">Realizar Consulta</button>
+
+
+			<div class="pre-loader" id="loading">
+				<div class="pre-loader-box" id="loading">
+					<div class="center-wave" id="loading">
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+						<div class="wave"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	</form>
+
+
+
+
+
+
+	<script src="{{ url_for('static', filename='vendors/scripts/process.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendors/scripts/layout-settings.js') }}"></script>
+
+
+	<script>
+		$(document).ready(function ($) {
+			// Selecione o campo 'valorOrdemServico' e aplique a máscara de moeda brasileira
+			$('#valor_veiculo').maskMoney({
+				prefix: 'R$ ',
+				thousands: '.',
+				decimal: ',',
+				allowZero: false,
+				affixesStay: false
+			});
+
+			// Máscara para o campo de whatsapp
+			$('input[name="whatsapp"]').mask('+55 (00) 00000-0000');
+
+			// Selecione a div de carregamento
+			var loadingDiv = $('#loading');
+
+			$('#consultaForm').submit(function (e) {
+				e.preventDefault();
+
+				var santanderChecked = $('input[name="santander"]').is(':checked');
+				var itauChecked = $('input[name="itau"]').is(':checked');
+				var formData = $('#consultaForm').serialize();
+
+				if (santanderChecked || itauChecked) {
+					// Mostrar a div de carregamento somente se uma das opções estiver marcada
+					loadingDiv.show();
+				}
+
+				if (santanderChecked) {
+					// Enviar a solicitação como POST para /automacao
+					$.ajax({
+						url: "/automacao",
+						type: "POST",
+						data: formData,
+						success: function (data) {
+							// Lógica de sucesso
+							loadingDiv.hide();
+						}
+					});
+				}
+
+				if (itauChecked) {
+					// Enviar a solicitação como POST para /itau
+					$.ajax({
+						url: "/itau",
+						type: "POST",
+						data: formData,
+						success: function (data) {
+							// Lógica de sucesso
+							loadingDiv.hide();
+						}
+					});
+				}
+
+				return false;
+			});
+
+			// Oculte o loading no início
+			loadingDiv.hide();
+		});
+	</script>
+
+</body>
+
+</html>
