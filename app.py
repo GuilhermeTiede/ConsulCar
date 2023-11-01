@@ -22,8 +22,8 @@ def index():
 def automacao():
     print("Executando Santander")
 
-    cpf_login = "03907034198"
-    senha_login = "Udyr2222$"
+    cpf_login = "seu cpf"
+    senha_login = "sua senha"
     cpf_cliente = request.form["cpf_cliente"]
     print("CPF ACEITO")
     placa = request.form["placa"]
@@ -166,8 +166,8 @@ def itau():
 
     navegador.get("https://www.credlineitau.com.br/simulator")
 
-    email = "Raisa.novaveiculos@gmail.com"
-    senha = "Nova@2024"
+    email = "seu e-mail"
+    senha = "sua senha"
 
     # Localize o elemento iframe
     iframe = navegador.find_element(By.TAG_NAME, "iframe")
