@@ -22,8 +22,8 @@ def index():
 def automacao():
     print("Executando Santander")
 
-    cpf_login = "seu cpf"
-    senha_login = "sua senha"
+    cpf_login = "03907034198"
+    senha_login = "Udyr2222$"
     cpf_cliente = request.form["cpf_cliente"]
     print("CPF ACEITO")
     placa = request.form["placa"]
@@ -33,7 +33,7 @@ def automacao():
     numero_whatsapp = request.form["whatsapp"]
     print("WHATASPP ACEITO")
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     options.add_argument('--start-maximized')
     options.add_argument('--start-fullscreen')
 
@@ -68,7 +68,7 @@ def automacao():
 #########################################FIM DO LOGIN################################################
 
     # Encontre o elemento div com a classe "personal-container"
-    personal_container = WebDriverWait(navegador, 15).until(
+    personal_container = WebDriverWait(navegador, 25).until(
         ec.presence_of_element_located((By.CSS_SELECTOR, 'div.personal-container'))
     )
 
@@ -140,7 +140,7 @@ def automacao():
     navegador.quit()
 
     # Caminho para a imagem a ser enviada
-    caminho_imagem = "/Users/guilhermetiede/Desktop/ConsultarCredito/images/tela_cheia.jpg"
+    caminho_imagem = "/Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg"
 
     # Enviar a imagem para o WhatsApp
     kit.sendwhats_image(numero_whatsapp, caminho_imagem, titulo_pagina)
@@ -166,8 +166,8 @@ def itau():
 
     navegador.get("https://www.credlineitau.com.br/simulator")
 
-    email = "seu e-mail"
-    senha = "sua senha"
+    email = "Raisa.novaveiculos@gmail.com"
+    senha = "Nova@2025"
 
     # Localize o elemento iframe
     iframe = navegador.find_element(By.TAG_NAME, "iframe")
@@ -278,7 +278,7 @@ def itau():
     navegador.quit()
 
     # Caminho para a imagem a ser enviada
-    caminho_imagem = "/Users/guilhermetiede/Desktop/ConsultarCredito/images/itau.jpg"
+    caminho_imagem = "/Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg"
 
     # Faça o upload da imagem para o ImgBB
     response = requests.post("https://api.imgbb.com/1/upload", data={"key": "ed8bf3f23b33326552eee4693b90c95e"},
@@ -292,9 +292,10 @@ def itau():
     print (link_imagem)
     link_final = unquote(link_imagem)
     print(link_final)
+    wait_time = 7
 
     # Enviar a imagem para o WhatsApp
-    kit.sendwhats_image(numero_whatsapp, caminho_imagem, titulo_pagina)
+    kit.sendwhats_image(numero_whatsapp, caminho_imagem, titulo_pagina, wait_time)
 
     # kit.sendwhatmsg_instantly(numero_whatsapp, link_final, wait_time=6)
 
