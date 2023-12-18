@@ -301,6 +301,199 @@ def itau():
 
     return "Automação concluída e a página foi salva"
 
+@app.route("/c6Bank", methods=["POST"])
+def itau():
+    print("Executando C6")
+    cpf_cliente = request.form["cpf_cliente"]
+    placa = request.form["placa"]
+    valor_veiculo = request.form["valor_veiculo"]
+    numero_whatsapp = request.form["whatsapp"]
+
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--start-maximized')
+    options.add_argument('--start-fullscreen')
+
+    # Configurar o WebDriver do Chrome com o modo headless
+    navegador = webdriver.Chrome(options=options)
+
+    navegador.get("https://c6auto.com.br/originacaolojista/login")
+
+    login = "810.479.160-53"
+    senha = "Nova@2026"
+
+    # Localize o elemento iframe
+    iframe = navegador.find_element(By.ID, "iframe")
+
+    # Mude o foco para o iframe
+    navegador.switch_to.frame(iframe)
+
+    # Aguarde até que o campo de e-mail seja visível
+    campo_cpf = WebDriverWait(navegador, 10).until(
+        ec.visibility_of_element_located((By.ID, "cpf"))
+    )
+    campo_cpf.send_keys(login)
+
+    # Aguarde até que o campo de senha seja visível
+    campo_senha = WebDriverWait(navegador, 20).until(
+        ec.visibility_of_element_located((By.ID, "password"))
+    )
+    campo_senha.send_keys(senha)
+
+    # Aguarde até que o botão "Entrar" seja clicável e clique nele
+    botao_entrar = WebDriverWait(navegador, 20).until(
+        ec.element_to_be_clickable((By.CLASS_NAME, "button-default"))
+    )
+    botao_entrar.click()
+
+    ##############################################FIM LOGIN c6######################################################
+    # Após o login, voltar ao contexto padrão
+    navegador.switch_to.default_content()
+
+    # Aguarde até que o campo de CPF seja visível
+    botao_proposta = WebDriverWait(navegador, 20).until(
+        ec.visibility_of_element_located((By.CLASS_NAME, "button-new-proposal mat-flat-button mat-primary"))
+    )
+
+    #clica no botao da segunda tela
+    botao_proposta.click()
+    
+    # Após a segunda tela, voltar ao contexto padrão
+    navegador.switch_to.default_content()
+      
+    # Insira o valor do CPF no campo
+    campo_cpf_tela2 = WebDriverWait(navegador, 20).until(
+        ec.visibility_of_element_located((By.ID, "mat-input-0"))
+    )
+    campo_cpf_tela2.send_keys(cpf_cliente)
+
+    import time
+    # Aguarde 1 segundo após a inserção do CPF
+    time.sleep(3)
+
+    # oega o campo celular
+    campo_celular_tela2 = WebDriverWait(navegador, 20).until(
+        ec.visibility_of_element_located((By.ID, "mat-input-1"))
+    )
+    campo_celular_tela2.send_keys("62996625382")
+
+
+    data_nascimento = WebDriverWait(navegador,20).until(
+        ec.visibility_of_element_located((By.ID, "mat-input-2"))
+    )
+    data_nascimento.send_keys("11121998")
+    
+    eh_taxi = WebDriverWait(navegador,20).until(
+        ec.visibility_of_element_located((By.XPATH, '//path[@class="mat-checkbox-checkmark-path" and @d="M4.1,12.7 9,17.6 20.3,6.3"]'))
+    )
+    
+    eh_taxi.click()
+    
+    
+    
+    tipo_veiculo = WebDriverWait(navegador,20).until(
+        ec.visibility_of_element_located((By.XPATH, '//div[contains(@class, "mat-select-arrow-wrapper")]/div[contains(@class, "mat-select-arrow")]'))
+    )
+    tipo_veiculo.click()
+    
+    veiculo_leve = WebDriverWait(navegador, 20 ).until(
+        ec.visibility_of_element_located((By.XPATH, '//span[text()="VEÍCULOS LEVES"]'))
+    )
+    
+    veiculo_leve.click()
+    
+        
+    # Localize a imagem pelo atributo 'src'
+    imagem_chassi_plate = navegador.find_element(By.CSS_SELECTOR, 'img[src="/assets/img/simulator/chassi-plate-search'
+                                                                 '-icon.svg"]')
+
+    # Clique na imagem
+    imagem_chassi_plate.click()
+
+    # Localize o campo de input da placa
+    campo_placa = navegador.find_element(By.CSS_SELECTOR, 'input[formcontrolname="vehicleIdentification"]')
+
+    campo_placa.send_keys(placa)
+
+    # Localize e clique no botão "buscar veículo"
+    botao_buscar = navegador.find_element(By.CSS_SELECTOR, 'button.btn-search-vehicle')
+    botao_buscar.click()
+
+    # Aguarde até que os elementos de seleção de modelo estejam visíveis
+    elementos_modelo = WebDriverWait(navegador, 10).until(
+        ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'input[formcontrolname="vehicle"]'))
+    )
+
+    # Verifique se há algum modelo disponível
+    if elementos_modelo:
+        # Se houver modelos, clique no primeiro
+        primeiro_modelo = elementos_modelo[0]
+        primeiro_modelo.click()
+
+    # Aguarde até que o botão "selecionar veículo" esteja visível e clicável
+    botao_selecionar = WebDriverWait(navegador, 10).until(
+        ec.element_to_be_clickable((By.CSS_SELECTOR, 'button.btn.voxel-button.voxel-button--full'))
+    )
+
+    # Clique no botão "selecionar veículo"
+    botao_selecionar.click()
+
+    # Aguarde até que o campo de Valor Veículo seja visível
+    campo_valor = WebDriverWait(navegador, 20).until(
+        ec.visibility_of_element_located((By.CSS_SELECTOR, "input[data-placeholder='valor do veículo']"))
+    )
+
+    # Insira o valor do CPF no campo
+    campo_valor.send_keys(valor_veiculo)
+
+    import time
+    time.sleep(10)
+
+    page_body = navegador.find_element(By.TAG_NAME, "body")
+    elemento = navegador.find_element(By.CSS_SELECTOR, 'mat-card[formgroupname="operationRequest"]')
+
+    # Role a página para o elemento
+    navegador.execute_script("arguments[0].scrollIntoView(true);", elemento)
+    for _ in range(1):
+        navegador.execute_script("window.scrollBy(0, window.innerHeight/1.5);")
+        time.sleep(1)
+
+    page_body.screenshot("images/itau.png")
+
+    # Renomeie o arquivo para "tela_cheia.jpg"
+    caminho_imagem_png = "images/itau.png"
+    caminho_imagem_jpg = "images/itau.jpg"
+    os.rename(caminho_imagem_png, caminho_imagem_jpg)
+
+    titulo_pagina = "Itau"
+
+    # Fechar o navegador
+    navegador.quit()
+
+    # Caminho para a imagem a ser enviada
+    caminho_imagem = "/Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg"
+
+    # Faça o upload da imagem para o ImgBB
+    response = requests.post("https://api.imgbb.com/1/upload", data={"key": "ed8bf3f23b33326552eee4693b90c95e"},
+                             files={"image": (caminho_imagem, open(caminho_imagem, "rb"))})
+
+    # Analise a resposta JSON
+    json_response = response.json()
+
+    # Obtenha o link da imagem enviada
+    link_imagem = json_response["data"]["url"]
+    print (link_imagem)
+    link_final = unquote(link_imagem)
+    print(link_final)
+    wait_time = 7
+
+    # Enviar a imagem para o WhatsApp
+    kit.sendwhats_image(numero_whatsapp, caminho_imagem, titulo_pagina, wait_time)
+
+    # kit.sendwhatmsg_instantly(numero_whatsapp, link_final, wait_time=6)
+
+    return "Automação concluída e a página foi salva"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
