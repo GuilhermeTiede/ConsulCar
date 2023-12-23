@@ -1,0 +1,62 @@
+{
+    "packages": [
+        {
+            "name": "deividfortuna/fipe",
+            "version": "2.4.1",
+            "version_normalized": "2.4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deividfortuna/fipe.git",
+                "reference": "1a2643de35272bf622131f0e3b815ce8fc2250f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deividfortuna/fipe/zipball/1a2643de35272bf622131f0e3b815ce8fc2250f9",
+                "reference": "1a2643de35272bf622131f0e3b815ce8fc2250f9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "time": "2020-02-25T02:54:41+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "DeividFortuna\\Fipe\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Deivid Fortuna",
+                    "email": "deividfortuna@gmail.com"
+                },
+                {
+                    "name": "Alison Monteiro",
+                    "email": "hi@alisonmonteiro.com.br"
+                },
+                {
+                    "name": "Felipe Torretto",
+                    "email": "toreti@gmail.com"
+                }
+            ],
+            "description": "Tabela Fipe Lib",
+            "support": {
+                "issues": "https://github.com/deividfortuna/fipe/issues",
+                "source": "https://github.com/deividfortuna/fipe/tree/v2.4.1"
+            },
+            "install-path": "../deividfortuna/fipe"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

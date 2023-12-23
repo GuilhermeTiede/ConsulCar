@@ -1,0 +1,29 @@
+version: '3'
+services:
+  my-python-app:
+    build: .
+    ports:
+       - "5001:5000"
+    depends_on:
+      - php-fpm
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_RUN_HOST=0.0.0.0
+
+  php-fpm:
+    image: php:7.4-fpm
+    volumes:
+      - ./app:/var/www/html
+    expose:
+      - "9000"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - my-python-app
+      - php-fpm

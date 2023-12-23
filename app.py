@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,6 +12,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 app = Flask(__name__)
 
+PARALLELUM_API_URL = "https://parallelum.com.br/fipe/api/v2/cars"
 
 @app.route("/", methods=['GET'])
 def index():
@@ -302,7 +303,8 @@ def itau():
     return "Automação concluída e a página foi salva"
 
 @app.route("/c6Bank", methods=["POST"])
-def itau():
+def c6bank():
+
     print("Executando C6")
     cpf_cliente = request.form["cpf_cliente"]
     placa = request.form["placa"]
@@ -494,6 +496,16 @@ def itau():
 
     return "Automação concluída e a página foi salva"
 
+
+@app.route('/marcas', methods=['GET'])
+def get_marcas():
+    response = requests.get(f"{PARALLELUM_API_URL}/brands")
+    return jsonify(response.json()), 200
+
+@app.route('/modelos/<marca_id>', methods=['GET'])
+def get_modelos(marca_id):
+    response = requests.get(f"{PARALLELUM_API_URL}/brands/{marca_id}/models")
+    return jsonify(response.json()), 200
 
 if __name__ == "__main__":
     app.run(debug=True)

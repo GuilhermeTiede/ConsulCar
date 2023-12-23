@@ -1,0 +1,204 @@
+Date: 8/11/2023
+Time: 16:7
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 16:7
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 16:9
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 16:10
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 16:11
+Phone Number: +55 (62) 98455-2627
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 16:18
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 16:19
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 17:56
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 17:56
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:0
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:0
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Desktop/ConsultarCredito/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:10
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:14
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:14
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:18
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:22
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:23
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:25
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:26
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:27
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:33
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:34
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:36
+Phone Number: +55 (62) 98172-2242
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:37
+Phone Number: +55 (62) 98172-2242
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:38
+Phone Number: +55 (62) 98172-2242
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:44
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:46
+Phone Number: +55 (62) 98172-2242
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:51
+Phone Number: +55 (62) 98172-2242
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 18:53
+Phone Number: +55 (62) 98172-2242
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 18:53
+Phone Number: +55 (62) 98172-2242
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 19:0
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 19:1
+Phone Number: +55 (62) 99656-9440
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------
+Date: 8/11/2023
+Time: 19:7
+Phone Number: +55 (64) 99279-5759
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/itau.jpg
+Caption: Itau
+--------------------
+Date: 8/11/2023
+Time: 19:8
+Phone Number: +55 (64) 99279-5759
+Image: /Users/guilhermetiede/Documents/GitHub/ConsultaCred/images/tela_cheia.jpg
+Caption: Santander
+--------------------

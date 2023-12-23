@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "88f84aee49d1a810ebb468b23ba9edfe",
+    "packages": [
+        {
+            "name": "deividfortuna/fipe",
+            "version": "2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deividfortuna/fipe.git",
+                "reference": "1a2643de35272bf622131f0e3b815ce8fc2250f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deividfortuna/fipe/zipball/1a2643de35272bf622131f0e3b815ce8fc2250f9",
+                "reference": "1a2643de35272bf622131f0e3b815ce8fc2250f9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DeividFortuna\\Fipe\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Deivid Fortuna",
+                    "email": "deividfortuna@gmail.com"
+                },
+                {
+                    "name": "Alison Monteiro",
+                    "email": "hi@alisonmonteiro.com.br"
+                },
+                {
+                    "name": "Felipe Torretto",
+                    "email": "toreti@gmail.com"
+                }
+            ],
+            "description": "Tabela Fipe Lib",
+            "support": {
+                "issues": "https://github.com/deividfortuna/fipe/issues",
+                "source": "https://github.com/deividfortuna/fipe/tree/v2.4.1"
+            },
+            "time": "2020-02-25T02:54:41+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

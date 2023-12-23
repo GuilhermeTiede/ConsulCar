@@ -1,0 +1,7 @@
+# requirements.txt
+
+Flask==2.0.1
+Werkzeug==2.0.1
+Selenium==3.141.0
+pywhatkit==5.2
+requests==2.26.0
